@@ -1,0 +1,38 @@
+/* Navbar Styling */
+.navbar {
+    background-color: #000000; /* Light background for a modern look */
+    box-shadow: 0 2px 4px rgba(0,0,0,.1); /* Subtle shadow for depth */
+}
+
+/* Navbar Brand Logo */
+.navbar-brand {
+    color: #000000; /* Brand color for visibility */
+    font-weight: bold; /* Make the brand name pop */
+}
+
+/* Navbar Link Styling */
+.nav-link {
+    color: #555; /* Darker text for better readability */
+}
+
+/* Active Link Highlighting */
+.nav-item.active .nav-link {
+    color: #080504; /* Highlight the active page */
+}
+
+/* Search Button Styling */
+.btn-outline-primary {
+    color: #ff3c00; /* Match the brand color */
+    border-color: #007bff; /* Consistent border color */
+}
+
+.btn-outline-primary:hover {
+    background-color: #000000; /* Fill color on hover */
+    color: #fff; /* White text on hover */
+}
+
+/* Cart Icon Styling */
+.bi-cart {
+    color: #ffc107; /* Standout color for the cart icon */
+}
+

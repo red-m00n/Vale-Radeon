@@ -1,0 +1,53 @@
+{% extends "navbar.html" %}
+
+{% block content %}
+    
+
+
+    
+<section style="background-color: #eee;">
+    <div class="text-center container py-5">
+      <h4 class="mt-4 mb-5"><strong>Products</strong></h4>
+  
+      <div class="row">
+        {% for product in products %}
+        <div class="col-lg-4 col-md-6 mb-4">
+          <div class="card">
+            <div class="bg-image hover-zoom ripple ripple-surface ripple-surface-light"
+              data-mdb-ripple-color="light">
+              <img src="{{ product.image.url }}"
+                class="w-100" />
+              <a href="{% url 'product' product.slug %}">
+                <div class="mask">
+                  <div class="d-flex justify-content-start align-items-end h-100">
+                    <h5><span class="badge bg-{{ product.badge_color }} ms-2">{{ product.badge }}</span></h5>
+                  </div>
+                </div>
+                <div class="hover-overlay">
+                  <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+                </div>
+              </a>
+            </div>
+            <div class="card-body">
+              <a href="{% url 'product' product.slug %}" class="text-reset">
+                <h5 class="card-title mb-3">{{ product.name }}</h5>
+              </a>
+              <a href="" class="text-reset">
+                <p>{{ product.category }}</p>
+              </a>
+              <h6 class="mb-3">
+                {% if product.discount_price %}
+                  <s>${{ product.price }}</s><strong class="ms-2 text-danger">${{ product.discount_price }}</strong>
+                {% else %}
+                  ${{ product.price }}
+                {% endif %}
+              </h6>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+
+{% endblock %}
